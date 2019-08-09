@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/payment/oauth-service/oauth-service.iml" filepath="$PROJECT_DIR$/payment/oauth-service/oauth-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/payment/payment.iml" filepath="$PROJECT_DIR$/payment/payment.iml" />
+      <module fileurl="file://$PROJECT_DIR$/payment/payment-consumer/payment-consumer.iml" filepath="$PROJECT_DIR$/payment/payment-consumer/payment-consumer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/payment/payment-servive/payment-servive.iml" filepath="$PROJECT_DIR$/payment/payment-servive/payment-servive.iml" />
+      <module fileurl="file://$PROJECT_DIR$/payment/springboot-security-oauth2/springboot-security-oauth2.iml" filepath="$PROJECT_DIR$/payment/springboot-security-oauth2/springboot-security-oauth2.iml" />
+    </modules>
+  </component>
+</project>

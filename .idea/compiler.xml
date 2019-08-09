@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="oauth-service" />
+        <module name="payment-consumer" />
+        <module name="springboot-security-oauth2" />
+        <module name="payment-servive" />
+        <module name="payment" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="oauth-service" target="1.8" />
+      <module name="payment" target="1.8" />
+      <module name="payment-consumer" target="1.8" />
+      <module name="payment-servive" target="1.8" />
+      <module name="springboot-security-oauth2" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="oauth-service" options="-parameters" />
+      <module name="payment" options="-parameters" />
+      <module name="payment-consumer" options="-parameters" />
+      <module name="payment-servive" options="-parameters" />
+      <module name="springboot-security-oauth2" options="-parameters" />
+    </option>
+  </component>
+</project>
