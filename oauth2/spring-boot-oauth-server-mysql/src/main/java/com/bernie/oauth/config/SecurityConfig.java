@@ -1,13 +1,14 @@
 package com.bernie.oauth.config;
+import com.bernie.oauth.service.OauthUserDetailsService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.core.userdetails.User;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 
 /**
  * @Author: Bernie
@@ -15,6 +16,43 @@ import org.springframework.security.provisioning.InMemoryUserDetailsManager;
  */
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
+    @Autowired
+    OauthUserDetailsService userDetailsService;
+    @Autowired
+    SecurityProperties securityConfig;
+
+    @Override
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+        //校验用户
+        auth.userDetailsService(userDetailsService).passwordEncoder(new PasswordEncoder() {
+            //对密码进行加密
+            @Override
+            public String encode(CharSequence charSequence) {
+                System.out.println("加密前："+charSequence.toString());
+
+                return passwordEncoder().encode(charSequence.toString());
+            }
+
+            //对密码进行判断匹配
+            @Override
+            public boolean matches(CharSequence charSequence, String s) {
+                return passwordEncoder().matches(charSequence.toString(),s);
+            }
+        });
+    }
+
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        http
+                .formLogin()
+                //.loginPage("templates/login.html") //登录页面 resources 下的 resources 和 static 目录
+                //.loginProcessingUrl("/authorization/form") ;//登录表单提交路径
+                .loginPage("/oauth/login")  //模板引擎
+                .loginProcessingUrl(securityConfig.getLoginProcessingUrl()) //获取模板引擎地址
+                .failureUrl("/oauth/login-error")
+                .and()
+                .csrf().disable();// 关闭 csrf 防护，因为对于我们的所有请求来说，都是需要携带身份信息的
+    }
 
     /**
      * 密码加密方式，spring 5 后必须对密码进行加密
@@ -46,7 +84,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
      *
      * @return InMemoryUserDetailsManager
      */
-    @Bean
+   /* @Bean
     @Override
     public UserDetailsService userDetailsService() {
         InMemoryUserDetailsManager manager = new InMemoryUserDetailsManager();
@@ -57,8 +95,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .password(passwordEncoder().encode("admin"))
                 .authorities("ROLE_ADMIN").build());
         return manager;
-    }
-
-
+    }*/
 
 }

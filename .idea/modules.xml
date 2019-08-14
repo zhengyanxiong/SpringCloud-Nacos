@@ -9,6 +9,7 @@
       <module fileurl="file://$PROJECT_DIR$/payment/payment-servive/payment-servive.iml" filepath="$PROJECT_DIR$/payment/payment-servive/payment-servive.iml" />
       <module fileurl="file://$PROJECT_DIR$/oauth2/spring-boot-oauth-server/spring-boot-oauth-server.iml" filepath="$PROJECT_DIR$/oauth2/spring-boot-oauth-server/spring-boot-oauth-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/oauth2/spring-boot-oauth-server-mysql/spring-boot-oauth-server-mysql.iml" filepath="$PROJECT_DIR$/oauth2/spring-boot-oauth-server-mysql/spring-boot-oauth-server-mysql.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oauth2/spring-security-oauth2-resource/spring-security-oauth2-resource.iml" filepath="$PROJECT_DIR$/oauth2/spring-security-oauth2-resource/spring-security-oauth2-resource.iml" />
       <module fileurl="file://$PROJECT_DIR$/payment/springboot-security-oauth2/springboot-security-oauth2.iml" filepath="$PROJECT_DIR$/payment/springboot-security-oauth2/springboot-security-oauth2.iml" />
     </modules>
   </component>

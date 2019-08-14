@@ -1,0 +1,13 @@
+server:
+  port: 8089
+
+security:
+  oauth2:
+    resource:
+      token-info-uri: http://localhost:8088/oauth/check_token
+    client:
+      access-token-uri: http://localhost:8088/oauth/token
+      client-id: oauth2
+      client-secret: oauth2 # 这里必须是加密前的密钥
+      grant-type: authorization_code,password,refresh_token
+      scope: all

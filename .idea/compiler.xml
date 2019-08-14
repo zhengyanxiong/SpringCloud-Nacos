@@ -13,6 +13,7 @@
         <module name="payment-servive" />
         <module name="oauth-service" />
         <module name="springboot-security-oauth2" />
+        <module name="spring-security-oauth2-resource" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -23,6 +24,7 @@
       <module name="payment-servive" target="1.8" />
       <module name="spring-boot-oauth-server" target="1.8" />
       <module name="spring-boot-oauth-server-mysql" target="1.8" />
+      <module name="spring-security-oauth2-resource" target="1.8" />
       <module name="springboot-security-oauth2" target="1.8" />
     </bytecodeTargetLevel>
   </component>
@@ -35,6 +37,7 @@
       <module name="payment-servive" options="-parameters" />
       <module name="spring-boot-oauth-server" options="-parameters" />
       <module name="spring-boot-oauth-server-mysql" options="-parameters" />
+      <module name="spring-security-oauth2-resource" options="-parameters" />
       <module name="springboot-security-oauth2" options="-parameters" />
     </option>
   </component>
