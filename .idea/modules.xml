@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/ncoscloud/Ncoscloud.iml" filepath="$PROJECT_DIR$/ncoscloud/Ncoscloud.iml" />
       <module fileurl="file://$PROJECT_DIR$/oauth2/oatuh2.iml" filepath="$PROJECT_DIR$/oauth2/oatuh2.iml" />
       <module fileurl="file://$PROJECT_DIR$/payment/oauth-service/oauth-service.iml" filepath="$PROJECT_DIR$/payment/oauth-service/oauth-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/payment/payment.iml" filepath="$PROJECT_DIR$/payment/payment.iml" />

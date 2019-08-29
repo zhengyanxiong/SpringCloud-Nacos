@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="Ncoscloud" />
         <module name="spring-boot-oauth-server-mysql" />
         <module name="payment" />
         <module name="payment-consumer" />
@@ -17,6 +18,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="Ncoscloud" target="1.8" />
       <module name="oatuh2" target="1.8" />
       <module name="oauth-service" target="1.8" />
       <module name="payment" target="1.8" />
@@ -30,6 +32,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="Ncoscloud" options="-parameters" />
       <module name="oatuh2" options="-parameters" />
       <module name="oauth-service" options="-parameters" />
       <module name="payment" options="-parameters" />

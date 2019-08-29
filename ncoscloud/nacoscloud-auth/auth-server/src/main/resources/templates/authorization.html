@@ -1,0 +1,45 @@
+<html>
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<head>
+
+    <meta charset="utf-8">
+    <title>授权</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/supersized.css">
+    <link rel="stylesheet" href="/css/style.css">
+
+</head>
+
+<body>
+
+<div class="page-container">
+    <h1>授权</h1>
+    <form action="/oauth/authorize" method="post">
+        <span>${clientId} 请求授权，该应用将访问您的资源信息。将会取得以下权限：${scopeName}</span>
+        <div>
+            <%for(scope in scopes){%>
+                <input type='hidden' name= '${scope}' value='true'>
+            <%}%>
+        </div>
+        <input type="hidden" name="user_oauth_approval" class="username" value="true">
+        <button type="submit" class="submit_button">确认授权</button>
+        <div class="error"><span>+</span></div>
+    </form>
+</div>
+
+<!-- Javascript -->
+<script src="/js/jquery-1.8.2.min.js" ></script>
+<script src="/js/supersized.3.2.7.min.js" ></script>
+<script src="/js/supersized-init.js" ></script>
+<script src="/js/scripts.js" ></script>
+
+</body>
+
+</html>

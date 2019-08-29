@@ -1,0 +1,33 @@
+server:
+  port: 8000
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/agilefastfk?useUnicode=true&characterEncoding=UTF-8&useOldAliasMetadataBehavior=true&autoReconnect=true&serverTimezone=UTC
+    username: root
+    password: root
+    initialization-mode: ALWAYS
+#mybatis
+mybatis-plus:
+  mapper-locations: classpath*:mapper/*.xml
+  #实体扫描，多个package用逗号或者分号分隔
+  typeAliasesPackage: io.agilefast.authserver.entity
+  global-config:
+    db-config:
+      #主键类型  0:"数据库ID自增-auto", 1:"该类型为未设置主键类型"-none,2:"用户输入ID"-input,3:"全局唯一ID (数字类型唯一ID)"-id_worker, 4:"全局唯一ID UUID"--uuid, 5:"全局唯一ID(字符类型唯一ID)"-id_worker_str;
+      id-type: auto
+      #字段策略 default:"默认的,一般只用于注解里,在全局里代表 NOT_NULL" ignored:"忽略判断" not_null:"非NULL判断" not_empty:"非空判断"
+      field-strategy: default
+      # 逻辑已删除值(默认为 1)
+      logic-delete-value: 1
+      # 逻辑未删除值(默认为 0)
+      logic-not-delete-value: 0
+    #刷新mapper 调试神器
+    refresh: true
+  configuration:
+    #是否开启自动驼峰命名规则（camel case）映射
+    map-underscore-to-camel-case: true
+    #全局地开启或关闭配置文件中的所有映射器已经配置的任何缓存
+    cache-enabled: false
+    #指定当结果集中值为 null 的时候是否调用映射对象的 Setter（Map 对象时为 put）方法，通常运用于有 Map.keySet() 依赖或 null 值初始化的情况。
+    call-setters-on-nulls: true

@@ -1,0 +1,33 @@
+server:
+  port: 9001
+spring:
+  application:
+    name: auth-resource-server
+  cloud:
+    nacos:
+      config:
+        server-addr: 127.0.0.1:8848
+      discovery:
+        server-addr: 127.0.0.1:8848
+    sentinel:
+      eager: true
+      transport:
+        dashboard: localhost:8080
+      datasource:
+        ds1:
+          nacos:
+            server-addr: 127.0.0.1:8848
+            dataId: ${spring.application.name}-degrade-rules
+            data-type: json
+            rule-type: degrade
+
+security:
+  oauth2:
+    resource:
+      token-info-uri: http://localhost:8000/oauth/check_token
+    client:
+      access-token-uri: http://localhost:8000/oauth/token
+      client-id: oauth2
+      client-secret: oauth2
+      grant-type: authorization_code,password,refresh_token
+      scope: all

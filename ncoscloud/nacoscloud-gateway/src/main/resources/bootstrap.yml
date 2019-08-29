@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: agilefast-gateway
+  cloud:
+    nacos:
+      config:
+        server-addr: 127.0.0.1:8848
+      discovery:
+        server-addr: 127.0.0.1:8848
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      default-filters:
+      - name: Hystrix
+        args:
+          name : default
+          fallbackUri: 'forward:/defaultFallback'
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          strategy: SEMAPHORE
+          thread:
+            timeoutInMilliseconds: 2000

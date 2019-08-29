@@ -10,6 +10,7 @@
         <option value="$PROJECT_DIR$/payment/oauth-service/pom.xml" />
         <option value="$PROJECT_DIR$/payment/springboot-security-oauth2/pom.xml" />
         <option value="$PROJECT_DIR$/oauth2/pom.xml" />
+        <option value="$PROJECT_DIR$/ncoscloud/pom.xml" />
       </list>
     </option>
   </component>
