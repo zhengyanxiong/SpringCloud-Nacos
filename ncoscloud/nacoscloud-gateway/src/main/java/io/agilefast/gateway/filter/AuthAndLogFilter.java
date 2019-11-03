@@ -3,9 +3,8 @@ package io.agilefast.gateway.filter;
 import com.alibaba.fastjson.JSON;
 
 import io.agilefast.gateway.util.MD5Utils;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.reactivestreams.Publisher;
 import org.springframework.cloud.gateway.filter.GatewayFilterChain;
 import org.springframework.cloud.gateway.filter.GlobalFilter;
@@ -29,10 +28,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.TreeMap;
 
+@Slf4j
 @Component
 public class AuthAndLogFilter implements GlobalFilter, Ordered {
-
-    static final Logger logger = LogManager.getLogger("request");
 
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
@@ -42,8 +40,9 @@ public class AuthAndLogFilter implements GlobalFilter, Ordered {
 
         StringBuilder logBuilder = new StringBuilder();
         Map<String, String> params = parseRequest(exchange, logBuilder);
-        boolean r = checkSignature(params, serverHttpRequest);
-        /*if(!r) {
+        log.info("请求参数：{}",params.toString());
+        /*boolean r = checkSignature(params, serverHttpRequest);
+        if(!r) {
             Map map = new HashMap<>();
             map.put("code", 2);
             map.put("message", "签名验证失败");
@@ -67,7 +66,7 @@ public class AuthAndLogFilter implements GlobalFilter, Ordered {
                         DataBufferUtils.release(dataBuffer);
                         String resp = new String(content, Charset.forName("UTF-8"));
                         logBuilder.append(",resp=").append(resp);
-                        logger.info(logBuilder.toString());
+                        log.info(logBuilder.toString());
                         byte[] uppedContent = new String(content, Charset.forName("UTF-8")).getBytes();
                         return bufferFactory.wrap(uppedContent);
                     }));

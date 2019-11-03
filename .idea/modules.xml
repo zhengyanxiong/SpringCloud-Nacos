@@ -2,7 +2,16 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/ncoscloud/Ncoscloud.iml" filepath="$PROJECT_DIR$/ncoscloud/Ncoscloud.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ncoscloud/nacoscloud-auth/auth-resource-server/auth-resource-server.iml" filepath="$PROJECT_DIR$/ncoscloud/nacoscloud-auth/auth-resource-server/auth-resource-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ncoscloud/nacoscloud-auth/auth-server/auth-server.iml" filepath="$PROJECT_DIR$/ncoscloud/nacoscloud-auth/auth-server/auth-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ncoscloud/nacoscloud-api/member-api/member-api.iml" filepath="$PROJECT_DIR$/ncoscloud/nacoscloud-api/member-api/member-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ncoscloud/nacoscloud-service/member-service/member-service.iml" filepath="$PROJECT_DIR$/ncoscloud/nacoscloud-service/member-service/member-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ncoscloud/nacoscloud-api/nacoscloud-api.iml" filepath="$PROJECT_DIR$/ncoscloud/nacoscloud-api/nacoscloud-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ncoscloud/nacoscloud-auth/nacoscloud-auth.iml" filepath="$PROJECT_DIR$/ncoscloud/nacoscloud-auth/nacoscloud-auth.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ncoscloud/nacoscloud-common/nacoscloud-common.iml" filepath="$PROJECT_DIR$/ncoscloud/nacoscloud-common/nacoscloud-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ncoscloud/nacoscloud-gateway/nacoscloud-gateway.iml" filepath="$PROJECT_DIR$/ncoscloud/nacoscloud-gateway/nacoscloud-gateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ncoscloud/nacoscloud-service/nacoscloud-service.iml" filepath="$PROJECT_DIR$/ncoscloud/nacoscloud-service/nacoscloud-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ncoscloud/ncoscloud.iml" filepath="$PROJECT_DIR$/ncoscloud/ncoscloud.iml" />
       <module fileurl="file://$PROJECT_DIR$/oauth2/oatuh2.iml" filepath="$PROJECT_DIR$/oauth2/oatuh2.iml" />
       <module fileurl="file://$PROJECT_DIR$/payment/oauth-service/oauth-service.iml" filepath="$PROJECT_DIR$/payment/oauth-service/oauth-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/payment/payment.iml" filepath="$PROJECT_DIR$/payment/payment.iml" />

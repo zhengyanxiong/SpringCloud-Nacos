@@ -20,6 +20,9 @@
  /******************************************************/
 package io.agilefast.gateway.config;
 
+import io.agilefast.gateway.properties.PermitAllUrlProperties;
+import io.agilefast.gateway.properties.ResourceServerProperties;
+import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.ClassPathResource;
@@ -42,5 +45,17 @@ public class GatewayConfig {
     @Bean
     RouterFunction<ServerResponse> staticResourceRouter(){
         return RouterFunctions.resources("/webjars/**", new ClassPathResource("webjars/"));
+    }
+
+    @Bean
+    @ConfigurationProperties(prefix = "auth")
+    public PermitAllUrlProperties getPermitAllUrlProperties() {
+        return new PermitAllUrlProperties();
+    }
+
+    @Bean
+    @ConfigurationProperties(prefix = "security.oauth2")
+    public ResourceServerProperties resourceServerProperties() {
+        return new ResourceServerProperties();
     }
 }

@@ -10,7 +10,7 @@ spring:
     gateway:
       discovery:
         locator:
-          enabled: true
+          enabled: false
       default-filters:
       - name: Hystrix
         args:
@@ -25,3 +25,22 @@ hystrix:
           strategy: SEMAPHORE
           thread:
             timeoutInMilliseconds: 2000
+
+security:
+  oauth2:
+    resource:
+      token-info-uri: /oauth/check_token
+    client:
+      access-token-uri: /oauth/token
+      client-id: oauth2
+      client-secret: oauth2
+      grant-type: authorization_code,password,refresh_token
+      scope: all
+auth:
+  permitall:
+    -
+      pattern: /login/**
+    -
+      pattern: /blog/**
+    -
+      pattern: /fallbackcontroller

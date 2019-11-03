@@ -16,8 +16,10 @@ import org.springframework.stereotype.Service;
 public class SysUserServiceImpl extends ServiceImpl<SysUserDao, SysUserEntity> implements SysUserService {
     @Override
     public SysUserEntity findUserByName(String userName) {
-        SysUserEntity user=this.getOne(new QueryWrapper<SysUserEntity>()
-                .eq("username",userName));
+        SysUserEntity user = this.getOne(new QueryWrapper<SysUserEntity>()
+                .eq("username", userName));
         return user;
     }
+
+
 }

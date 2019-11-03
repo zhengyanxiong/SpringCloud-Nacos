@@ -6,18 +6,34 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="Ncoscloud" />
-        <module name="spring-boot-oauth-server-mysql" />
-        <module name="payment" />
-        <module name="payment-consumer" />
-        <module name="spring-boot-oauth-server" />
-        <module name="payment-servive" />
-        <module name="oauth-service" />
-        <module name="springboot-security-oauth2" />
         <module name="spring-security-oauth2-resource" />
+        <module name="oauth-service" />
+        <module name="payment" />
+        <module name="springboot-security-oauth2" />
+        <module name="spring-boot-oauth-server-mysql" />
+        <module name="Ncoscloud" />
+        <module name="member-service" />
+        <module name="auth-server" />
+        <module name="spring-boot-oauth-server" />
+        <module name="payment-consumer" />
+        <module name="member-api" />
+        <module name="nacoscloud-common" />
+        <module name="nacoscloud-gateway" />
+        <module name="payment-servive" />
+        <module name="auth-resource-server" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="auth-resource-server" target="1.8" />
+      <module name="auth-server" target="1.8" />
+      <module name="member-api" target="1.8" />
+      <module name="member-service" target="1.8" />
+      <module name="nacoscloud-api" target="1.8" />
+      <module name="nacoscloud-auth" target="1.8" />
+      <module name="nacoscloud-common" target="1.8" />
+      <module name="nacoscloud-gateway" target="1.8" />
+      <module name="nacoscloud-service" target="1.8" />
+      <module name="ncoscloud" target="1.8" />
       <module name="Ncoscloud" target="1.8" />
       <module name="oatuh2" target="1.8" />
       <module name="oauth-service" target="1.8" />
@@ -33,6 +49,12 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="Ncoscloud" options="-parameters" />
+      <module name="auth-resource-server" options="-parameters" />
+      <module name="auth-server" options="-parameters" />
+      <module name="member-api" options="-parameters" />
+      <module name="member-service" options="-parameters" />
+      <module name="nacoscloud-common" options="-parameters" />
+      <module name="nacoscloud-gateway" options="-parameters" />
       <module name="oatuh2" options="-parameters" />
       <module name="oauth-service" options="-parameters" />
       <module name="payment" options="-parameters" />
